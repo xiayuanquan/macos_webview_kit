@@ -1,0 +1,22 @@
+PODS:
+  - FlutterMacOS (1.0.0)
+  - macos_webview_kit (0.0.1):
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - macos_webview_kit (from `Flutter/ephemeral/.symlinks/plugins/macos_webview_kit/macos`)
+
+EXTERNAL SOURCES:
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  macos_webview_kit:
+    :path: Flutter/ephemeral/.symlinks/plugins/macos_webview_kit/macos
+
+SPEC CHECKSUMS:
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  macos_webview_kit: ff7c5ec2a7d1f98b35637bd4f0472b46fa058b3c
+
+PODFILE CHECKSUM: 353c8bcc5d5b0994e508d035b5431cfe18c1dea7
+
+COCOAPODS: 1.12.1
