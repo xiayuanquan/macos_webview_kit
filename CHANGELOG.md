@@ -2,7 +2,11 @@
 
 * first release. 
 
-### 0.0.2
+## 0.0.2
 
 * a. Add cache, open the webpage with the same url again, it will keep the last state. 
 * b. You can switch the url.
+
+## 0.0.2+1
+
+* details adjustment, no change in function

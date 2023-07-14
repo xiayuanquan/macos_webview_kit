@@ -1,6 +1,6 @@
 name: macos_webview_kit
 description: 兼容MacOS系统的WebView插件，可以像在iOS系统上使用WKWebView一样丝滑。在Flutter MacOS项目中，通过chanel通道，实现WebView的打开（传递url）和关闭。
-version: 0.0.2
+version: 0.0.2+1
 homepage: https://github.com/xiayuanquan/macos_webview_kit.git
 
 environment:

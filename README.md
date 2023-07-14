@@ -1,6 +1,6 @@
 # Flutter macos_webview_kit
 
-## [0.0.1]
+## [0.0.2+1]
 
 # 介绍（Introduce）：
 * 【English】：Flutter is compatible with the WebView plug-in of the MacOS system, which can be as smooth as using WKWebView on the iOS system. In the Flutter MacOS project, the opening (passing url) and closing of WebView is realized through the chanel channel.
