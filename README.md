@@ -26,8 +26,8 @@
 
 5. * 【English】：core method
    * 【chinese】：核心方法
-     * NSViewController：addChild 和 removeFromParent
-     * NSView：addSubview 和 removeFromSuperview
+     * NSViewController：addChild && removeFromParent
+     * NSView：addSubview && removeFromSuperview
 
 
 
