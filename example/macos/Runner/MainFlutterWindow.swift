@@ -40,18 +40,44 @@ class BlurryContainerViewController: NSViewController {
 
   @objc func openWebView(_ notification: NSNotification) {
     if let mainWindow = NSApp.mainWindow as? MainFlutterWindow{
+
+        /// receive notification
         if let urlString = notification.object as? String {
-           let childVc = CustomWebViewController(urlString: urlString)
-           self.addChild(childVc)
-           self.view.addSubview(childVc.view)
-           mainWindow.myCustomWebViewController = childVc
-           childVc.view.translatesAutoresizingMaskIntoConstraints = false
+           var childVc: CustomWebViewController?
+
+           /// read cache
+           if let customWebViewVc = mainWindow.myCustomWebViewController {
+              childVc = customWebViewVc
+           } else {
+              /// new by url
+              childVc = CustomWebViewController(urlString: urlString)
+              mainWindow.myCustomWebViewController = childVc!
+           }
+            
+           /// if exist, return
+            for childViewController in self.children {
+                if(childViewController is CustomWebViewController) {
+                    print("please must close old, then can open new")
+                    return;
+                }
+            }
+
+           /// add && layout && show
+           self.addChild(childVc!)
+           self.view.addSubview(childVc!.view)
+           childVc!.view.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint.activate([
-               childVc.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-               childVc.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
-               childVc.view.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-               childVc.view.heightAnchor.constraint(equalTo: self.view.heightAnchor, constant: -150),
+               childVc!.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+               childVc!.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
+               childVc!.view.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+               childVc!.view.heightAnchor.constraint(equalTo: self.view.heightAnchor, constant: -150),
            ])
+
+           /// if reset url, auto reload
+           if(childVc!.urlString != urlString) {
+               childVc!.webView?.evaluateJavaScript("document.body.remove()")
+               childVc!.restUrlStringAndReload(resetUrlString: urlString)
+           }
         }
     }
   }
@@ -59,7 +85,7 @@ class BlurryContainerViewController: NSViewController {
   @objc func closeWebView() {
     if let mainWindow = NSApp.mainWindow as? MainFlutterWindow {
         if let webViewVcController = mainWindow.myCustomWebViewController {
-            webViewVcController.webView?.removeFromSuperview()
+            webViewVcController.view.removeFromSuperview()
             webViewVcController.removeFromParent();
         }
     }

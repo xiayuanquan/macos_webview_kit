@@ -11,7 +11,7 @@ import WebKit
 class CustomWebViewController: NSViewController {
     var webView: WKWebView?
 
-    private let urlString: String
+    public var urlString: String
 
     required init(urlString: String) {
         self.urlString = urlString
@@ -50,6 +50,11 @@ class CustomWebViewController: NSViewController {
         if let _ = NSApp.mainWindow {
             loadRequest()
         }
+    }
+
+    public func restUrlStringAndReload(resetUrlString: String) {
+      urlString = resetUrlString
+      loadRequest()
     }
 
     @objc func loadRequest() {
