@@ -47,8 +47,12 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  Future<void> openWebView() async {
+  Future<void> openWebView1() async {
     await _macosWebviewKitPlugin.openWebView(urlString: "https://www.sohu.com");
+  }
+
+  Future<void> openWebView2() async {
+    await _macosWebviewKitPlugin.openWebView(urlString: "https://www.baidu.com");
   }
 
   Future<void> closeWebView() async {
@@ -57,7 +61,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    print(" ----- build -----");
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -71,7 +74,8 @@ class _MyAppState extends State<MyApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(onPressed: () => openWebView(), child: const Text("open webView")),
+                  ElevatedButton(onPressed: () => openWebView1(), child: const Text("open webView1")),
+                  ElevatedButton(onPressed: () => openWebView2(), child: const Text("open webView2")),
                   ElevatedButton(onPressed: () => closeWebView(), child: const Text("close webView")),
                 ],
               )
