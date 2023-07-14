@@ -1,6 +1,6 @@
 # Flutter macos_webview_kit
 
-## [0.0.2+1]
+## [0.0.2+2]
 
 # 介绍（Introduce）：
 * 【English】：Flutter is compatible with the WebView plug-in of the MacOS system, which can be as smooth as using WKWebView on the iOS system. In the Flutter MacOS project, the opening (passing url) and closing of WebView is realized through the chanel channel.
@@ -17,11 +17,11 @@
 ***
 
 3. * 【English】：Change the contentViewController of MainFlutterWindow to BlurryContainerViewController that wraps FlutterViewController.
-   * 【chinese】：同样地，将自动生成的FlutterViewController用一个定义的NSViewController包装起来，例如BlurryContainerViewController。
+   * 【chinese】：将MainFlutterWindow的contentViewController更改为包装FlutterViewController的BlurryContainerViewController。。
 *** 
 
 4. * 【English】：Add notification monitoring in viewDidLoad of BlurryContainerViewController to receive messages from Flutter through the chanel channel to open and close webView.
-   * 【chinese】：同样地，将自动生成的FlutterViewController用一个定义的NSViewController包装起来，例如BlurryContainerViewController。
+   * 【chinese】：在BlurryContainerViewController的viewDidLoad中添加通知监听，通过chanel通道接收来自Flutter的消息来打开和关闭webView。
 ***
 
 5. * 【English】：core method

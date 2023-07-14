@@ -10,3 +10,7 @@
 ## 0.0.2+1
 
 * details adjustment, no change in function
+
+## 0.0.2+2
+
+* update readme.md
