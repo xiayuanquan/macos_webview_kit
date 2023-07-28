@@ -18,3 +18,7 @@
 ## 0.0.2+3
 
 * delete Useless logs，no change in function
+* 
+## 0.0.2+4
+
+* optimization，no change in function
