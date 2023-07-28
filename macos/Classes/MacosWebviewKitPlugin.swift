@@ -17,8 +17,10 @@ public class MacosWebviewKitPlugin: NSObject, FlutterPlugin {
     case "openWebView":
        let arguments = call.arguments as? String
        NotificationCenter.default.post(name: NSNotification.Name("openWebViewNotification"), object: arguments);
+       result(true)
    case "closeWebView":
-      NotificationCenter.default.post(name: NSNotification.Name("closeWebViewNotification"), object: nil);
+      NotificationCenter.default.post(name: NSNotification.Name("closeWebViewNotification"), object: nil)
+      result(true)
     default:
       result(FlutterMethodNotImplemented)
     }

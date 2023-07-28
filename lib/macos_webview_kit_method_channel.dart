@@ -18,14 +18,14 @@ class MethodChannelMacosWebviewKit extends MacosWebviewKitPlatform {
 
   @override
   Future<void> openWebView({required String urlString}) async {
-    if (kDebugMode) { print("openWebView"); }
+    if (kDebugMode) { print("open webView urlString - $urlString"); }
     final ret = await methodChannel.invokeMethod<void>('openWebView', urlString);
     return ret;
   }
 
   @override
   Future<void> closeWebView() async {
-    if (kDebugMode) { print("closeWebView"); }
+    if (kDebugMode) { print(""); }
     final ret = await methodChannel.invokeMethod<void>('closeWebView');
     return ret;
   }
