@@ -7,19 +7,19 @@
 
 
 # Implementation principle：
-1. * In the Runner project, customize a CustomWebViewController.swift, inherit from NSViewController, and then encapsulate WKWebView internally.
+* In the Runner project, customize a CustomWebViewController.swift, inherit from NSViewController, and then encapsulate WKWebView internally.
 ***
 
-2. * Similarly, wrap the automatically generated FlutterViewController with a defined NSViewController, such as BlurryContainerViewController.
+* Similarly, wrap the automatically generated FlutterViewController with a defined NSViewController, such as BlurryContainerViewController.
 ***
 
-3. * Change the contentViewController of MainFlutterWindow to BlurryContainerViewController that wraps FlutterViewController.
+* Change the contentViewController of MainFlutterWindow to BlurryContainerViewController that wraps FlutterViewController.
 *** 
 
-4. * Add notification monitoring in viewDidLoad of BlurryContainerViewController to receive messages from Flutter through the chanel channel to open and close webView.
+* Add notification monitoring in viewDidLoad of BlurryContainerViewController to receive messages from Flutter through the chanel channel to open and close webView.
 ***
 
-5. * core method
+* core method
      * NSViewController：addChild && removeFromParent
      * NSView：addSubview && removeFromSuperview
 
