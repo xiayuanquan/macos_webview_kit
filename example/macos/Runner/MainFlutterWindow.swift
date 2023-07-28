@@ -57,7 +57,6 @@ class BlurryContainerViewController: NSViewController {
            /// if exist, return
             for childViewController in self.children {
                 if(childViewController is CustomWebViewController) {
-                    print("please must close old, then can open new")
                     return;
                 }
             }
