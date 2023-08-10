@@ -2,10 +2,10 @@
 
 ## [0.0.3]
 
-# Introduce ：
+# Introduce 
 * Flutter is compatible with the WebView plug-in of the MacOS system, which can be as smooth as using WKWebView on the iOS system. In the Flutter MacOS project, the opening (passing url) and closing of WebView is realized through the chanel channel.
 
-# config ***.entitlements：
+# config ***.entitlements
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
