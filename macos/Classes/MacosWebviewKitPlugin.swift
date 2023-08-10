@@ -12,17 +12,23 @@ public class MacosWebviewKitPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
-    case "getPlatformVersion":
-      result("macOS " + ProcessInfo.processInfo.operatingSystemVersionString)
-    case "openWebView":
-       let arguments = call.arguments as? String
-       NotificationCenter.default.post(name: NSNotification.Name("openWebViewNotification"), object: arguments);
-       result(true)
-   case "closeWebView":
-      NotificationCenter.default.post(name: NSNotification.Name("closeWebViewNotification"), object: nil)
-      result(true)
-    default:
-      result(FlutterMethodNotImplemented)
+       case "getPlatformVersion":
+          result("macOS " + ProcessInfo.processInfo.operatingSystemVersionString)
+       case "openWebView":
+          let arguments = call.arguments as? String
+          NotificationCenter.default.post(name: NSNotification.Name("openWebViewNotification"), object: arguments)
+          result(true)
+       case "closeWebView":
+          NotificationCenter.default.post(name: NSNotification.Name("closeWebViewNotification"), object: nil)
+          result(true)
+       case "showWebView":
+          NotificationCenter.default.post(name: NSNotification.Name("showWebViewNotification"), object: nil)
+          result(true)
+       case "hideWebView":
+          NotificationCenter.default.post(name: NSNotification.Name("hideWebViewNotification"), object: nil)
+          result(true)
+       default:
+          result(FlutterMethodNotImplemented)
     }
   }
 }

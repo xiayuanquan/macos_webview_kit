@@ -25,9 +25,22 @@ class MethodChannelMacosWebviewKit extends MacosWebviewKitPlatform {
 
   @override
   Future<void> closeWebView() async {
-    if (kDebugMode) { print(""); }
+    if (kDebugMode) { print(''); }
     final ret = await methodChannel.invokeMethod<void>('closeWebView');
     return ret;
   }
 
+  @override
+  Future<void> showWebView() async {
+    if (kDebugMode) { print(''); }
+    final ret = await methodChannel.invokeMethod<void>('showWebView');
+    return ret;
+  }
+
+  @override
+  Future<void> hideWebView() async {
+    if (kDebugMode) { print(''); }
+    final ret = await methodChannel.invokeMethod<void>('hideWebView');
+    return ret;
+  }
 }

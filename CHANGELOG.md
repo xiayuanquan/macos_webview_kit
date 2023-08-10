@@ -18,7 +18,12 @@
 ## 0.0.2+3
 
 * delete Useless logs，no change in function
-* 
+
 ## 0.0.2+4
 
 * optimization，no change in function
+
+## 0.0.3
+
+* new method：show or hide webView
+* Dealing with bullet box issues and event penetration

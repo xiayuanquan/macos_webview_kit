@@ -1,6 +1,6 @@
 name: macos_webview_kit
 description: Show or Close the webView on your Flutter MacOS app
-version: 0.0.2+4
+version: 0.0.3
 homepage: https://github.com/xiayuanquan/macos_webview_kit.git
 
 environment:

@@ -34,4 +34,12 @@ abstract class MacosWebviewKitPlatform extends PlatformInterface {
   Future<void> closeWebView() {
     throw UnimplementedError('closeWebView() has not been implemented.');
   }
+
+  Future<void> showWebView() {
+    throw UnimplementedError('showWebView() has not been implemented.');
+  }
+
+  Future<void> hideWebView() {
+    throw UnimplementedError('hideWebView() has not been implemented.');
+  }
 }
